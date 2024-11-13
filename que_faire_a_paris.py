@@ -84,7 +84,7 @@ X_reduced = df_cleaned[top_keywords + ['audience']]  # Caractéristiques réduit
 y = df_cleaned['Type de prix']  # Label
 
 # Création et entraînement de l'arbre de décision avec une profondeur limitée
-clf = tree.DecisionTreeClassifier(max_depth=2)  # Limite la profondeur à 3 pour simplifier l'affichage
+clf = tree.DecisionTreeClassifier(max_depth=2)  # Limite la profondeur à 2 pour simplifier l'affichage
 clf = clf.fit(X_reduced, y)
 
 # Visualisation de l'arbre
@@ -93,7 +93,7 @@ plot_tree(clf, feature_names=X_reduced.columns, class_names=price_type_encoder.c
 plt.title("Arbre de décision pour prédire le type de prix basé sur les mots-clés et l'audience (profondeur limitée)")
 plt.show()
 
-# Exemple de prédiction (à ajuster selon les mots-clés présents et l'audience encodée)
+# Exemple de prédiction
 new_event = [[1, 0, 1, 0, 1, 2]]  # Exemple : valeurs binaires pour les mots-clés et l'audience encodée
 predicted_price_type = clf.predict(new_event)
 predicted_price_type_decoded = price_type_encoder.inverse_transform(predicted_price_type)
