@@ -93,8 +93,31 @@ plot_tree(clf, feature_names=X_reduced.columns, class_names=price_type_encoder.c
 plt.title("Arbre de décision pour prédire le type de prix basé sur les mots-clés et l'audience (profondeur limitée)")
 plt.show()
 
-# Exemple de prédiction
-new_event = [[1, 0, 1, 0, 1, 2]]  # Exemple : valeurs binaires pour les mots-clés et l'audience encodée
-predicted_price_type = clf.predict(new_event)
-predicted_price_type_decoded = price_type_encoder.inverse_transform(predicted_price_type)
-print("Le type de prix prédit pour le nouvel événement est :", predicted_price_type_decoded)
+# Liste des tests supplémentaires avec explications
+test_cases = [
+    # Test 1: Un événement avec une faible audience et plusieurs mots-clés populaires
+    ([1, 1, 0, 1, 0, 0], "Événement avec des mots-clés fréquents et une audience faible (classe attendue : payant)"),
+
+    # Test 2: Un événement avec une audience moyenne et des mots-clés peu fréquents
+    ([0, 0, 1, 0, 1, 2],
+     "Événement avec quelques mots-clés populaires et une audience moyenne (classe attendue : dépend de la combinaison)"),
+
+    # Test 3: Un événement avec une audience élevée et aucun des mots-clés fréquents
+    ([0, 0, 0, 0, 0, 4],
+     "Événement avec une audience élevée mais sans mots-clés fréquents (classe attendue : possiblement gratuit)"),
+
+    # Test 4: Un événement avec des mots-clés indiquant une activité typiquement gratuite et une audience faible
+    ([1, 0, 1, 0, 0, 1], "Événement typiquement gratuit avec faible audience (classe attendue : gratuit)"),
+
+    # Test 5: Un événement avec tous les mots-clés fréquents présents et une audience élevée
+    ([1, 1, 1, 1, 1, 5],
+     "Événement avec tous les mots-clés fréquents et une audience très élevée (classe attendue : dépend du modèle)"),
+]
+
+# Itération sur chaque cas de test pour effectuer les prédictions
+for i, (test_input, description) in enumerate(test_cases):
+    predicted_type = clf.predict([test_input])
+    predicted_type_decoded = price_type_encoder.inverse_transform(predicted_type)
+    print(f"Test {i + 1}: {description}")
+    print("Valeurs de test:", test_input)
+    print("Le type de prix prédit est :", predicted_type_decoded[0], "\n")
