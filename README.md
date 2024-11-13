@@ -7,16 +7,22 @@ Ce projet utilise un arbre de décision pour prédire le type de prix (gratuit o
 Le code est organisé de manière à effectuer plusieurs étapes :
 
 1. **Chargement et nettoyage des données** : Lecture des données depuis un fichier CSV et suppression des valeurs manquantes.
-2. **Analyse exploratoire** :
+2. **Nombre d'evenement à Paris**
+3. **Les mots cles qui reviennent le plus souvent**
+   ![Top 20 des mots-clés les plus fréquents](./Top20MotsClesPlusFrequent.png)
+4. **La repartition des types de prix des evenements**
+   ![Répartition des types de prix](./RepartitionDesTypesDePrix.png)
+5. **Analyse exploratoire** :
    - Extraction des mots-clés et comptage des fréquences.
    - Affichage des 20 mots-clés les plus fréquents dans un graphique à barres.
    - Affichage de la répartition des types de prix dans un diagramme circulaire.
-3. **Préparation des données pour le modèle** :
+6. **Préparation des données pour le modèle** :
    - Sélection des 5 mots-clés les plus fréquents pour la création de variables binaires.
    - Encodage des colonnes `audience` et `Type de prix` pour le traitement par l'arbre de décision.
-4. **Construction et entraînement de l'arbre de décision** : Utilisation de ces caractéristiques pour créer un modèle d'arbre de décision avec une profondeur limitée.
-5. **Visualisation de l'arbre** : Représentation graphique de l'arbre pour observer comment le modèle prend ses décisions.
-6. **Exemple de prédiction** : Illustration d'une prédiction pour un événement avec certaines caractéristiques.
+7. **Construction et entraînement de l'arbre de décision** : Utilisation de ces caractéristiques pour créer un modèle d'arbre de décision avec une profondeur limitée.
+8. **Visualisation de l'arbre** : Représentation graphique de l'arbre pour observer comment le modèle prend ses décisions.
+  ![Répartition des types de prix](./ArbreDeDecisionProfondeur2.png)
+9. **Exemple de prédiction** : Illustration d'une prédiction pour un événement avec certaines caractéristiques.
 
 ## Analyse de l'Arbre de Décision
 L'arbre de décision obtenu est structuré comme suit :
