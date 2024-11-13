@@ -9,9 +9,9 @@ Le code est organisé de manière à effectuer plusieurs étapes :
 1. **Chargement et nettoyage des données** : Lecture des données depuis un fichier CSV et suppression des valeurs manquantes.
 2. **Nombre d'evenement à Paris**
 3. **Les mots cles qui reviennent le plus souvent**
-   ![Top 20 des mots-clés les plus fréquents](./Top20MotsClesPlusFrequent.png)
+   <img src="./Top20MotsClesPlusFrequent.png" alt="Top 20 des mots-clés les plus fréquents" width="600"/>
 4. **La repartition des types de prix des evenements**
-   ![Répartition des types de prix](./RepartitionDesTypesDePrix.png)
+   <img src="./RepartitionDesTypesDePrix.png" alt="Top 20 des mots-clés les plus fréquents" width="600"/>
 5. **Analyse exploratoire** :
    - Extraction des mots-clés et comptage des fréquences.
    - Affichage des 20 mots-clés les plus fréquents dans un graphique à barres.
@@ -21,7 +21,8 @@ Le code est organisé de manière à effectuer plusieurs étapes :
    - Encodage des colonnes `audience` et `Type de prix` pour le traitement par l'arbre de décision.
 7. **Construction et entraînement de l'arbre de décision** : Utilisation de ces caractéristiques pour créer un modèle d'arbre de décision avec une profondeur limitée.
 8. **Visualisation de l'arbre** : Représentation graphique de l'arbre pour observer comment le modèle prend ses décisions.
-  ![Répartition des types de prix](./ArbreDeDecisionProfondeur2.png)
+  ![Répartition des types de prix]()
+  <img src="./ArbreDeDecisionProfondeur2.png" alt="Top 20 des mots-clés les plus fréquents" width="600"/>
 9. **Exemple de prédiction** : Illustration d'une prédiction pour un événement avec certaines caractéristiques.
 
 ## Analyse de l'Arbre de Décision
