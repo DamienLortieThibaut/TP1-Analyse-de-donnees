@@ -1,7 +1,7 @@
 # README - Analyse de l'Arbre de Décision et Présentation du Code
 
 ## Introduction
-Ce projet utilise un arbre de décision pour prédire le type de prix (gratuit ou payant) des événements à Paris, basé sur des caractéristiques telles que les mots-clés associés à chaque événement et leur audience. L'analyse est réalisée à partir d'un fichier CSV contenant des informations sur les événements. La profondeur de l'arbre est limitée à 2 pour simplifier la visualisation et la compréhension des décisions.
+Ce projet utilise un arbre de décision pour prédire le type de prix (gratuit ou payant) des événements à Paris, basé sur des caractéristiques telles que les mots-clés associés à chaque événement et leur audience. L'analyse est réalisée à partir d'un fichier CSV contenant des informations sur les événements. La profondeur de l'arbre est limitée à 2 pour simplifier la visualisation et la compréhension des décisions. Pour avoir une precision meilleur lors des tests, il faut augmenter la profondeur.
 
 ## Présentation du Code
 Le code est organisé de manière à effectuer plusieurs étapes :
@@ -22,7 +22,7 @@ Le code est organisé de manière à effectuer plusieurs étapes :
 7. **Construction et entraînement de l'arbre de décision** : Utilisation de ces caractéristiques pour créer un modèle d'arbre de décision avec une profondeur limitée.
 8. **Visualisation de l'arbre** : Représentation graphique de l'arbre pour observer comment le modèle prend ses décisions.
   <img src="./ArbreDeDecisionProfondeur2.png" alt="Top 20 des mots-clés les plus fréquents" width="600"/>
-9. **Exemple de prédiction** : Illustration d'une prédiction pour un événement avec certaines caractéristiques.
+9. **Exemple de prédiction avec tests** : Illustration d'une prédiction pour un événement avec certaines caractéristiques.
 
 ## Analyse de l'Arbre de Décision
 L'arbre de décision obtenu est structuré comme suit :
